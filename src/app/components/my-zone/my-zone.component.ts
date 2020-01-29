@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyZoneComponent implements OnInit {
 
+  itemsNav = [
+    'Dashboard',
+    'Workflow',
+    'Explore',
+    'More'
+  ];
   constructor() { }
 
   ngOnInit() {

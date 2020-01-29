@@ -1,2 +1,23 @@
-<p>my-zone works!</p>
-<h1>En construccion</h1>
+<div class="wrapper">
+    <nav class="navbar">
+        <button mat-icon-button>
+            <i class="material-icons">menu</i>
+        </button>
+        <a href="#">
+            MEMOKON
+        </a>
+        <ul>
+            <li *ngFor="let itemNav of itemsNav">
+                <button mat-button>
+                    <a href="#"> {{ itemNav }} </a>
+                </button>
+            </li>
+        </ul>
+        <button mat-icon-button>
+            <i class="material-icons">search </i>
+        </button>
+    </nav>
+</div>
+<main class="main">
+
+</main>
