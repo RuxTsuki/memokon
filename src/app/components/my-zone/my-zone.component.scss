@@ -30,10 +30,6 @@
                 a {}
             }
         }
-
-        li:nth-child(2) {
-            border-bottom: 3px solid green;
-        }
     }
 
     @media screen and (min-width: 550px) {
@@ -41,6 +37,15 @@
 
         ul {
             display: flex;
+            position: relative;
+        }
+
+        li {
+            width: 100px;
+
+            button {
+                width: 100%;
+            }
         }
     }
 }
@@ -48,4 +53,26 @@
 .main {
     height: 100%;
 
+}
+
+/* otras */
+
+/* .item-active {
+    border-bottom: 3px solid green;
+    border-radius: 2px;
+} */
+
+.line-nav {
+    height: 2px;
+    width: 100px;
+    background-color: #07ADA8;
+    position: absolute;
+    bottom: -2px;
+    transition: .35s ease-in-out;
+}
+
+.s {
+    display: flex;
+    position: relative;
+    width: auto;
 }

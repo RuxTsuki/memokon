@@ -7,17 +7,21 @@
             MEMOKON
         </a>
         <ul>
-            <li *ngFor="let itemNav of itemsNav">
-                <button mat-button>
-                    <a href="#"> {{ itemNav }} </a>
-                </button>
-            </li>
+            <div class="s">
+                <li [ngClass]="{'item-active': itemNav.state}" *ngFor="let itemNav of itemsNav">
+                    <button (click)="ItemSelected(itemNav)" mat-button>
+                        <a href="#"> {{ itemNav.name }} </a>
+                    </button>
+                </li>
+                <div class="line-nav">
+                </div>
+            </div>
         </ul>
         <button mat-icon-button>
             <i class="material-icons">search </i>
         </button>
     </nav>
-</div>
-<main class="main">
+    <main class="main">
 
-</main>
+    </main>
+</div>
