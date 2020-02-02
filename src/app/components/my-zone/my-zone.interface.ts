@@ -3,4 +3,5 @@ export interface IMenuItems {
     code?: string;
     state?: boolean;
     width?: number;
+    onTopMenu?: boolean;
 }

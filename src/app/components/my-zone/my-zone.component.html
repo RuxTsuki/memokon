@@ -1,27 +1,59 @@
 <div class="wrapper">
-    <nav class="navbar">
-        <button mat-icon-button>
+    <nav class="navbar" [ngClass]="{'navbar-searchbarM': searchBarM}">
+        <button mat-icon-button (click)="onToggleAside()">
             <i class="material-icons">menu</i>
         </button>
-        <a href="#">
-            MEMOKON
-        </a>
-        <ul>
-            <div class="s">
-                <li [ngClass]="{'item-active': itemNav.state}" *ngFor="let itemNav of itemsNav">
-                    <button (click)="ItemSelected(itemNav)" mat-button>
-                        <a href="#"> {{ itemNav.name }} </a>
-                    </button>
-                </li>
-                <div class="line-nav">
-                </div>
-            </div>
-        </ul>
-        <button mat-icon-button>
-            <i class="material-icons">search </i>
+
+        <ng-template #name *ngIf="!searchBarM; then menuItemsTemplate else searchBarTemplate">
+        </ng-template>
+
+        <button (click)="onToggleSearch()" mat-icon-button>
+            <i *ngIf="!searchBarM && !searchBar" class="material-icons">search</i>
+            <i *ngIf="searchBarM || searchBar" class="material-icons">clear</i>
         </button>
     </nav>
+    <mat-sidenav-container class="aside-nav-container">
+        <mat-sidenav #sidenav mode="over" (opened)="openAside()" (closed)="closeAside()" [fixedBottomGap]="0">
+            Sidenav content
+        </mat-sidenav>
+        <mat-toolbar class="example-footer">Footer</mat-toolbar>
+    </mat-sidenav-container>
     <main class="main">
 
     </main>
+</div>
+
+
+
+<ng-template #searchBarTemplate>
+    <div class="search-bar">
+        Buscar
+    </div>
+</ng-template>
+
+
+<ng-template #menuItemsTemplate>
+    <a href="#">
+        MEMOKON
+    </a>
+    <ul>
+        <div class="container-menu-items" *ngIf="!searchBar; else searchBarTemplate">
+            <li [ngClass]="{'item-active': itemNav.state, 'dont-show': itemNav.onTopMenu === false}"
+                *ngFor="let itemNav of itemsNav">
+                <button (click)="ItemSelected(itemNav)" mat-button>
+                    <a href="#"> {{ itemNav.name }} </a>
+                </button>
+            </li>
+            <div class="line-nav">
+            </div>
+        </div>
+    </ul>
+</ng-template>
+
+<div #buttonToTop class="button-to-top">
+    <button (click)="scrollToTop()" mat-fab>
+        <i class="material-icons">
+            keyboard_arrow_up
+        </i>
+    </button>
 </div>

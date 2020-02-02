@@ -7,6 +7,7 @@
     width: 100%;
     height: auto;
     display: grid;
+    height: 45px;
     align-items: center;
     background: white;
     box-shadow: 0 2px 2px rgba(0, 0, 0, .24), 0 0 2px rgba(0, 0, 0, .12);
@@ -14,8 +15,6 @@
 
     button {
         place-self: center;
-
-        i {}
     }
 
     a {
@@ -25,6 +24,12 @@
     ul {
         display: none;
 
+        .container-menu-items {
+            display: flex;
+            position: relative;
+            width: auto;
+        }
+
         li {
             button {
                 a {}
@@ -32,23 +37,67 @@
         }
     }
 
-    @media screen and (min-width: 550px) {
+    @media screen and (min-width: 660px) {
         grid-template-columns: 60px minmax(100px, 200px) auto 60px;
+
+        .dont-show {
+            display: none;
+            color: red;
+        }
 
         ul {
             display: flex;
             position: relative;
+            height: 100%;
         }
 
         li {
             width: 100px;
 
             button {
+                font-size: .95em;
+                font-weight: 400;
                 width: 100%;
+                height: 100%;
             }
         }
+
+
     }
 }
+
+.navbar-searchbarM {
+    grid-template-columns: 60px 1fr 60px;
+}
+
+/* Aside */
+.aside-nav-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: transparent;
+    flex: 1 0 auto;
+}
+
+mat-sidenav {
+    width: 240px;
+}
+
+.show-aside {
+    right: 0;
+}
+
+.example-footer {
+    display: none;
+    bottom: 0;
+}
+
+
+
+
+
+
 
 .main {
     height: 100%;
@@ -67,12 +116,15 @@
     width: 100px;
     background-color: #07ADA8;
     position: absolute;
-    bottom: -2px;
+    bottom: 0;
     transition: .35s ease-in-out;
 }
 
-.s {
-    display: flex;
-    position: relative;
-    width: auto;
+
+
+
+.modal-container {
+    box-shadow: 0 11px 15px -7px rgba(0, 0, 0, .2), 0 24px 38px 3px rgba(0, 0, 0, .14), 0 9px 46px 8px rgba(0, 0, 0, .12);
+    background: #fff;
+    color: rgba(0, 0, 0, .87);
 }

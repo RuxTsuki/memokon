@@ -5,8 +5,9 @@
 
 html,
 body {
-    height: 100%;
+    height: 200%;
     background-color: var(--secondary-color);
+    scroll-behavior: smooth;
 }
 
 body {
@@ -41,4 +42,18 @@ a:active,
 a:focus {
     text-decoration: none;
     color: initial;
+}
+
+
+.button-to-top {
+    position: fixed;
+    display: none;
+    bottom: 8px;
+    right: 8px;
+    z-index: 50;
+}
+
+
+.hidde-content {
+    overflow: hidden;
 }
