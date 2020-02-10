@@ -5,34 +5,36 @@
 
 html,
 body {
-    height: 200%;
-    background-color: var(--secondary-color);
-    scroll-behavior: smooth;
+  height: 200%;
+  background-color: var(--secondary-color);
+  scroll-behavior: smooth;
 }
 
 body {
-    margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 :root {
-
-    --secondary-color: #f9f9f9;
-    --icons-color: #6C7B8A;
-
+  --secondary-color: #f9f9f9;
+  --icons-color: #6C7B8A;
+  --spec-10-percent-layer: rgba(0, 0, 0, 0.10);
+  --spec-text-secondary: #606060;
+  --spec-text-primary: #0d0d0d;
+  --spec-size-text-primary: 0.875rem;
 }
 
 *,
 *::before,
 *::after {
-    margin: 0;
-    box-sizing: border-box;
-    padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
 }
 
 ul,
 li {
-    list-style: none;
+  list-style: none;
 }
 
 a,
@@ -40,20 +42,21 @@ a:visited,
 a:link,
 a:active,
 a:focus {
-    text-decoration: none;
-    color: initial;
+  text-decoration: none;
+  color: initial;
+  outline: 0;
 }
 
 
 .button-to-top {
-    position: fixed;
-    display: none;
-    bottom: 8px;
-    right: 8px;
-    z-index: 50;
+  position: fixed;
+  display: none;
+  bottom: 8px;
+  right: 8px;
+  z-index: 50;
 }
 
 
 .hidde-content {
-    overflow: hidden;
+  overflow: hidden;
 }

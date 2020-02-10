@@ -1,6 +1,7 @@
 import { Component, OnInit, ElementRef, TemplateRef, ViewChild, AfterViewInit } from '@angular/core';
-import { IMenuItems } from './my-zone.interface';
+import { IMenuItems, IAsideSections } from './my-zone.interface';
 import { MatSidenav } from '@angular/material/sidenav';
+import { asideItems } from "./aside-items";
 
 @Component({
   selector: 'app-my-zone',
@@ -20,6 +21,7 @@ export class MyZoneComponent implements OnInit, AfterViewInit {
     { name: 'Explore' },
     { name: 'More' }
   ];
+  asideSections: IAsideSections[] = asideItems;
   @ViewChild('sidenav', { static: false }) sidenav: MatSidenav;
   @ViewChild('buttonToTop', { static: false }) buttonToTop: ElementRef<HTMLDivElement>;
 

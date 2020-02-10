@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MyZoneComponent } from './my-zone.component';
 
+import { MyZoneComponent } from './my-zone.component';
 import { MyZoneRouting } from './my-zone.routing';
 
 import { MatIconModule } from '@angular/material/icon';
@@ -9,6 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatInputModule } from '@angular/material/input';
+import { MatRippleModule } from '@angular/material/core';
 @NgModule({
   declarations: [
     MyZoneComponent
@@ -21,7 +22,8 @@ import { MatInputModule } from '@angular/material/input';
     MatTooltipModule,
     MatTooltipModule,
     MatSidenavModule,
-    MatInputModule
+    MatInputModule,
+    MatRippleModule
   ]
 })
 export class MyZoneModule { }
