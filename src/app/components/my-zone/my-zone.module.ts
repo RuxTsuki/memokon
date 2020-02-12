@@ -10,9 +10,12 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatInputModule } from '@angular/material/input';
 import { MatRippleModule } from '@angular/material/core';
+import { NewDocsModule } from '../docs/new-docs/new-docs.module';
+import { SearchBarComponent } from './search-bar/search-bar.component';
 @NgModule({
   declarations: [
-    MyZoneComponent
+    MyZoneComponent,
+    SearchBarComponent
   ],
   imports: [
     CommonModule,
@@ -23,7 +26,8 @@ import { MatRippleModule } from '@angular/material/core';
     MatTooltipModule,
     MatSidenavModule,
     MatInputModule,
-    MatRippleModule
+    MatRippleModule,
+    NewDocsModule
   ]
 })
 export class MyZoneModule { }

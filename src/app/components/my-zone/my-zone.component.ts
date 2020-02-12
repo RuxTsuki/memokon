@@ -1,7 +1,8 @@
 import { Component, OnInit, ElementRef, TemplateRef, ViewChild, AfterViewInit } from '@angular/core';
-import { IMenuItems, IAsideSections } from './my-zone.interface';
+import { IMenuItems, IAsideSections, IAsideItems } from './my-zone.interface';
 import { MatSidenav } from '@angular/material/sidenav';
 import { asideItems } from "./aside-items";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-my-zone',
@@ -31,7 +32,7 @@ export class MyZoneComponent implements OnInit, AfterViewInit {
   searchBarM = false;
 
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
     this.onResizeWindow();
@@ -75,16 +76,29 @@ export class MyZoneComponent implements OnInit, AfterViewInit {
     });
   }
 
-  /** Abre o cierra el aside menu, agrega una clase para abrir el menu */
-  onToggleAside() {
+
+  /**
+   * Evento click de cualquier item del aside Menu Section
+   * @section `IAsideSections`
+   */
+  asideClick(section: IAsideItems) {
+    switch (section.codeItem) {
+      case '3nd': this.router.navigateByUrl('docs/new'); break;
+
+      default:
+        break;
+    }
     this.sidenav.toggle();
-    document.querySelector('mat-sidenav-container').classList.toggle('show-aside');
   }
 
   /** Intercambia la accion del icono Search por buscar o cancelar busqueda */
   onToggleSearch = () => this.searchBar || this.searchBarM ? this.searchBar = this.searchBarM = false : this.onSearchBar();
 
-
+  /** Abre o cierra el aside menu, agrega una clase para abrir el menu */
+  onToggleAside() {
+    this.sidenav.toggle();
+    document.querySelector('mat-sidenav-container').classList.toggle('show-aside');
+  }
   /** Add or remove al abrir o cerrar el Aside Menu */
   closeAside = () => document.querySelector('mat-sidenav-container').classList.remove('show-aside');
   openAside = () => document.querySelector('mat-sidenav-container').classList.add('show-aside');

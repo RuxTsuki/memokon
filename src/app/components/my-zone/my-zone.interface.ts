@@ -11,6 +11,7 @@ export interface IAsideItems {
   state?: boolean;
   iconName?: string;
   tooltip?: string;
+  codeItem?: string;
 }
 export interface IAsideSections {
   title?: string;
