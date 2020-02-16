@@ -13,7 +13,8 @@
     </button>
   </nav>
   <mat-sidenav-container class="aside-nav-container">
-    <mat-sidenav #sidenav mode="over" (opened)="openAside()" (closed)="closeAside()" [fixedBottomGap]="0">
+    <mat-sidenav class="b-scroll" #sidenav mode="over" (opened)="openAside()" (closed)="closeAside()"
+      [fixedBottomGap]="0">
       <div class="aside-container">
         <div class="aside-header">
           <div class="aside-return">
@@ -46,7 +47,12 @@
   </mat-sidenav-container>
   <main class="main">
     <router-outlet></router-outlet>
+    Aca mi contenido
   </main>
+
+  <footer class="footer">
+    Aca mi footer
+  </footer>
 </div>
 
 

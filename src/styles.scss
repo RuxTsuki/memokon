@@ -2,20 +2,6 @@
 
 @import 'animations';
 
-
-html,
-body,
-app-root {
-  height: 100%;
-  background-color: var(--secondary-color);
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-}
-
 :root {
   --secondary-color: #f9f9f9;
   --icons-color: #6C7B8A;
@@ -23,6 +9,35 @@ body {
   --spec-text-secondary: #606060;
   --spec-text-primary: #0d0d0d;
   --spec-size-text-primary: 0.875rem;
+  --spec-scroll: rgba(152, 148, 148, 0.72)
+    /* #505254 */
+}
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+
+  ::-webkit-scrollbar {
+    height: 6px;
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--spec-scroll);
+    border-radius: 4px;
+  }
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  height: 100%;
+}
+
+html {
+  background-color: red;
 }
 
 *,
@@ -33,6 +48,17 @@ body {
   padding: 0;
 }
 
+.b-scroll {
+  ::-webkit-scrollbar {
+    height: 6px;
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--spec-scroll);
+    border-radius: 4px;
+  }
+}
 
 ul,
 li {
@@ -62,3 +88,6 @@ a:focus {
 .hidde-content {
   overflow: hidden;
 }
+
+
+

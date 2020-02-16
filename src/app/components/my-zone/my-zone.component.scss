@@ -1,9 +1,13 @@
 .wrapper {
   width: 100%;
   height: 100%;
+  background-color: var(--secondary-color);
 }
 
 .navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
   width: 100%;
   height: auto;
   display: grid;
@@ -81,24 +85,29 @@
 }
 
 /* Aside */
-
-.show-aside {
-  right: 0;
-  transition: ease all 2s;
-}
-
 .aside-nav-container {
   position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
+  /* right: 0; */
   background-color: transparent;
   flex: 1 0 auto;
+
+}
+
+.show-aside {
+  right: 0;
+  z-index: 55;
 }
 
 mat-sidenav {
   width: 240px;
   height: 100%;
+
+  ::ng-deep .mat-drawer-inner-container {
+    scroll-behavior: smooth;
+  }
 }
 
 .aside-container {
@@ -212,9 +221,15 @@ mat-sidenav {
   }
 }
 
+/* Main */
+.main {}
 
-.main {
-  height: 100%;
+/* Footer */
+.footer {
+  /*   position: sticky;
+  bottom: 0;
+  margin-bottom: auto;
+  height: 150px; */
 }
 
 /* otras */

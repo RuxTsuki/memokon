@@ -99,9 +99,16 @@ export class MyZoneComponent implements OnInit, AfterViewInit {
     this.sidenav.toggle();
     document.querySelector('mat-sidenav-container').classList.toggle('show-aside');
   }
+
   /** Add or remove al abrir o cerrar el Aside Menu */
-  closeAside = () => document.querySelector('mat-sidenav-container').classList.remove('show-aside');
-  openAside = () => document.querySelector('mat-sidenav-container').classList.add('show-aside');
+  closeAside = () => {
+    document.querySelector('mat-sidenav-container').classList.remove('show-aside');
+    document.body.style.overflow = '';
+  }
+  openAside = () => {
+    document.querySelector('mat-sidenav-container').classList.add('show-aside');
+    document.body.style.overflow = 'hidden';
+  }
 
   /** si la resolucion es Menor a 660 */
   isMobile = () => document.documentElement.clientWidth < 660;
