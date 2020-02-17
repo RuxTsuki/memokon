@@ -27,10 +27,10 @@ export class MyZoneComponent implements OnInit, AfterViewInit {
   @ViewChild('buttonToTop', { static: false }) buttonToTop: ElementRef<HTMLDivElement>;
 
   itemSelected: IMenuItems = undefined;
+  searchFiltered = [];
 
   searchBar = false;
   searchBarM = false;
-
 
   constructor(private router: Router) { }
 
@@ -84,6 +84,11 @@ export class MyZoneComponent implements OnInit, AfterViewInit {
   asideClick(section: IAsideItems) {
     switch (section.codeItem) {
       case '3nd': this.router.navigateByUrl('docs/new'); break;
+      case '4s': {
+        this.router.navigateByUrl('docs/new');
+        this.onSearchBar();
+      } break;
+
 
       default:
         break;

@@ -1,3 +1,49 @@
 .container-searchbar {
   width: 100%;
+  max-width: 100%;
+  height: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-color: var(--spec-input-background);
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+
+  input {
+    border: 0;
+    outline: none;
+    height: 20px;
+    font-size: 1.125rem;
+    color: var(--spec-input-text);
+    margin-bottom: 2px;
+    padding: 2px 12px;
+    background-color: transparent;
+    width: 100%;
+    max-width: 100%;
+    text-align: left;
+  }
+
+  input:focus+span::after {
+    transform: scale(1);
+  }
+
+  span {
+    border-bottom: 1px solid var(--icons-color);
+    width: 100%;
+    height: 2px;
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 5;
+      border-bottom: 2px solid red;
+      transition: all ease 350ms;
+      transform: scale(0, 1);
+    }
+  }
 }

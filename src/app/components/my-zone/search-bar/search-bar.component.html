@@ -1,3 +1,4 @@
 <div class="container-searchbar">
-  <app-input></app-input>
+  <input #search (keyup)="onKeyup(search)" (focus)="true" type="text" placeholder="Search">
+  <span></span>
 </div>

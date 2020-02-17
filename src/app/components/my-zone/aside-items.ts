@@ -29,7 +29,7 @@ export const asideItems: IAsideSections[] = [
       name: 'Search',
       iconName: 'search',
       tooltip: 'Search your task, documentations and more...',
-      codeItem: '4S'
+      codeItem: '4s'
     }]
   },
   {

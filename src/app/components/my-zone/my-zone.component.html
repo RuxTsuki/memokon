@@ -19,7 +19,7 @@
         <div class="aside-header">
           <div class="aside-return">
             <button (click)="sidenav.toggle()" mat-icon-button>
-              <i class="material-icons">arrow_back</i>
+              <i class="material-icons">close</i>
             </button>
           </div>
           <div class="aside-image">
@@ -59,7 +59,8 @@
 
 <ng-template #searchBarTemplate>
   <div class="search-bar">
-    <app-search-bar></app-search-bar>
+    <app-search-bar [searchFiltered]="searchFiltered" [onFocus]="searchBar || searchBarM ? true : false">
+    </app-search-bar>
   </div>
 </ng-template>
 
