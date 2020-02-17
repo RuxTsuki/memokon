@@ -8,6 +8,8 @@
   --spec-10-percent-layer: rgba(0, 0, 0, 0.10);
   --spec-text-secondary: #606060;
   --spec-text-primary: #0d0d0d;
+  --spec-input-text: hsla(0, 0%, 0%, 0.87);
+  --spec-input-background: rgba(0,0,0,.04);
   --spec-size-text-primary: 0.875rem;
   --spec-scroll: rgba(152, 148, 148, 0.72)
     /* #505254 */
@@ -88,6 +90,3 @@ a:focus {
 .hidde-content {
   overflow: hidden;
 }
-
-
-
