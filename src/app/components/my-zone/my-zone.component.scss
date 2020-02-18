@@ -143,11 +143,53 @@ mat-sidenav {
       justify-content: center;
       align-items: center;
 
+      .gb {
+        width: 86px;
+        height: 86px;
+        position: relative;
+      }
+
       .profile-image {
-        background-color: wheat;
         width: 80px;
         height: 80px;
         border-radius: 50%;
+        background-image: url("../../../assets/img/paper.jpg");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .add-image {
+        position: absolute;
+        background-color: white;
+        border-radius: 50%;
+        bottom: 0;
+        right: 0;
+        width: auto;
+        height: auto;
+        width: 32px;
+        height: 32px;
+
+        a {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          width: 26px;
+          height: 26px;
+          margin: 0 2.5px 3px;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: white;
+          box-shadow: 0 1px 1px 0 rgba(65, 69, 73, 0.3), 0 1px 3px 1px rgba(65, 69, 73, 0.15);
+        }
+
+        i {
+          font-size: 20px;
+          border-radius: 50%;
+          color: var(--spec-main-color);
+        }
       }
 
       span {

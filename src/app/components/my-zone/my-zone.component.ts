@@ -1,7 +1,8 @@
 import { Component, OnInit, ElementRef, TemplateRef, ViewChild, AfterViewInit } from '@angular/core';
-import { IMenuItems, IAsideSections, IAsideItems } from './my-zone.interface';
+import { IMenuItems, IAsideSections, IAsideItems, ISearchFilters } from './my-zone.interface';
 import { MatSidenav } from '@angular/material/sidenav';
 import { asideItems } from "./aside-items";
+import { SEARCH_FILTERS } from "./search-filters";
 import { Router } from '@angular/router';
 
 @Component({
@@ -23,6 +24,7 @@ export class MyZoneComponent implements OnInit, AfterViewInit {
     { name: 'More' }
   ];
   asideSections: IAsideSections[] = asideItems;
+  searchFilters: ISearchFilters[] = SEARCH_FILTERS;
   @ViewChild('sidenav', { static: false }) sidenav: MatSidenav;
   @ViewChild('buttonToTop', { static: false }) buttonToTop: ElementRef<HTMLDivElement>;
 
@@ -79,15 +81,16 @@ export class MyZoneComponent implements OnInit, AfterViewInit {
 
   /**
    * Evento click de cualquier item del aside Menu Section
-   * @section `IAsideSections`
+   * @section `IAsideItems`
    */
   asideClick(section: IAsideItems) {
+    this.searchBar = this.searchBarM = false;
     switch (section.codeItem) {
       case '3nd': this.router.navigateByUrl('docs/new'); break;
-      case '4s': {
-        this.router.navigateByUrl('docs/new');
+      case '4s':
+        this.router.navigateByUrl('search');
         this.onSearchBar();
-      } break;
+        break;
 
 
       default:
@@ -96,11 +99,18 @@ export class MyZoneComponent implements OnInit, AfterViewInit {
     this.sidenav.toggle();
   }
 
-  /** Intercambia la accion del icono Search por buscar o cancelar busqueda */
-  onToggleSearch = () => this.searchBar || this.searchBarM ? this.searchBar = this.searchBarM = false : this.onSearchBar();
-
+  /** Intercambia la accion del icono Search por buscar o cancelar busqueda y se redirige a la url search */
+  onToggleSearch = () => {
+    if (this.searchBar || this.searchBarM) {
+      this.router.navigateByUrl('');
+      this.searchBar = this.searchBarM = false;
+    } else {
+      this.router.navigateByUrl('search');
+      this.onSearchBar();
+    }
+  }
   /** Abre o cierra el aside menu, agrega una clase para abrir el menu */
-  onToggleAside() {
+  onToggleAside = () => {
     this.sidenav.toggle();
     document.querySelector('mat-sidenav-container').classList.toggle('show-aside');
   }
