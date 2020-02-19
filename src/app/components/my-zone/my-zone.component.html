@@ -42,7 +42,8 @@
         <div class="aside-main">
           <div *ngFor="let asideSection of asideSections" class="aside-sections">
             <h3> {{ asideSection.title }} </h3>
-            <div (click)="asideClick(section)" matRipple *ngFor="let section of asideSection.items" class="aside-items">
+            <div (click)="asideClick(section.itemCode)" matRipple *ngFor="let section of asideSection.items"
+              class="aside-items">
               <div class="aside-section">
                 <i class="material-icons"> {{ section.iconName }} </i>
                 <span> {{ section.name }} </span>
@@ -77,7 +78,6 @@
     Aca mi footer
   </footer>
 </div>
-
 
 
 <ng-template #searchBarTemplate>

@@ -12,7 +12,7 @@ export interface IAsideItems {
   state?: boolean;
   iconName?: string;
   tooltip?: string;
-  codeItem?: string;
+  itemCode?: string;
 }
 /* Secciones del aside menu */
 export interface IAsideSections {

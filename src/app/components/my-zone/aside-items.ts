@@ -3,23 +3,23 @@ import { IAsideSections } from "./my-zone.interface";
 
 export const asideItems: IAsideSections[] = [
   {
-    title: 'Documentation',
+    title: 'Workspace',
     code: '3',
     items: [{
-      name: 'New Document',
-      iconName: 'library_add',
-      tooltip: 'Create a new space for your documentation',
-      codeItem: '3nd'
+      name: 'Notes / Memos',
+      iconName: 'format_list_bulleted',
+      tooltip: 'Create or list my recordatories',
+      itemCode: '3nm'
     }, {
-      name: 'Documents List',
+      name: 'Tasks',
       iconName: 'list_alt',
-      tooltip: 'All my documentations',
-      codeItem: '3dl'
+      tooltip: 'Create or list my tasks',
+      itemCode: '3dl'
     }, {
-      name: 'Deleted Documents',
-      iconName: 'restore_from_trash',
-      tooltip: 'Documents that you deleted',
-      codeItem: '3dd'
+      name: 'Docs',
+      iconName: 'library_add',
+      tooltip: 'Create or list my documents',
+      itemCode: '3d'
     }]
   },
   {
@@ -28,28 +28,61 @@ export const asideItems: IAsideSections[] = [
     items: [{
       name: 'Search',
       iconName: 'search',
-      tooltip: 'Search your task, documentations and more...',
-      codeItem: '4s'
+      tooltip: 'Search your task, Docs and more...',
+      itemCode: '4s'
+    }]
+  }, {
+    title: 'Custom Space',
+    code: '5',
+    items: [{
+      name: 'New Custom Space',
+      iconName: 'create_new_folder',
+      tooltip: 'Create a new space',
+      itemCode: '5ncs'
+    }, {
+      name: 'My Customs Spaces',
+      iconName: 'view_module',
+      tooltip: 'all my customs spaces',
+      itemCode: '5mcs'
     }]
   },
   {
-    title: 'Tasks',
-    code: '5',
+    title: 'Explore',
+    code: '6',
     items: [{
-      name: 'New Task',
-      iconName: 'post_add',
-      tooltip: 'Add a new Task',
-      codeItem: '5nt'
+      name: 'Search Docs',
+      iconName: 'explore',
+      tooltip: 'Search docs of people',
+      itemCode: '6sd'
     }, {
-      name: 'Tasks List',
-      iconName: 'list_alt',
-      tooltip: 'All my task',
-      codeItem: '5lt'
+      name: 'Trending',
+      iconName: 'whatshot',
+      tooltip: 'what is on trending',
+      itemCode: '6t'
     }, {
-      name: 'Tasks deleted',
-      iconName: 'restore_from_trash',
-      tooltip: 'Task that i deleted',
-      codeItem: '5dt'
+      name: 'People',
+      iconName: 'person_pin',
+      tooltip: 'Search for people',
+      itemCode: '6p'
+    }]
+  }, {
+    title: '',
+    code: '7',
+    items: [{
+      name: 'Settings',
+      iconName: 'settings',
+      tooltip: 'Your adjustments',
+      itemCode: '7s'
+    }, {
+      name: 'Help',
+      iconName: 'help',
+      tooltip: 'Help with anything that you need',
+      itemCode: '7h'
+    }, {
+      name: 'Feedback',
+      iconName: 'feedback',
+      tooltip: 'Send feedback',
+      itemCode: '7f'
     }]
   }
 ]
