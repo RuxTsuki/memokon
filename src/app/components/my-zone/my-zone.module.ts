@@ -13,6 +13,7 @@ import { MatRippleModule } from '@angular/material/core';
 import { NewDocsModule } from '../docs/new-docs/new-docs.module';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { InputModule } from '../utils/input/input.module';
+import { NotesModule } from '../notes/notes.module';
 @NgModule({
   declarations: [
     MyZoneComponent,
@@ -29,7 +30,8 @@ import { InputModule } from '../utils/input/input.module';
     MatInputModule,
     MatRippleModule,
     NewDocsModule,
-    InputModule
+    InputModule,
+    NotesModule
   ]
 })
 export class MyZoneModule { }

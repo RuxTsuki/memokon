@@ -98,6 +98,10 @@ export class MyZoneComponent implements OnInit, AfterViewInit {
         this.saveLastAsideItem(itemCode);
         this.router.navigateByUrl('docs/new');
         break;
+      case '3nm':
+        this.saveLastAsideItem(itemCode);
+        this.router.navigateByUrl('notes');
+        break;
       case '4s':
         this.router.navigateByUrl('search');
         this.onSearchBar();

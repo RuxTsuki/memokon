@@ -3,6 +3,7 @@
 @import 'animations';
 
 :root {
+  --spec-white-color: #ffffff;
   --secondary-color: #f9f9f9;
   --icons-color: #6C7B8A;
   --spec-10-percent-layer: rgba(0, 0, 0, 0.10);
@@ -10,10 +11,20 @@
   --spec-main-color: #07ADA8;
   --spec-text-primary: #0d0d0d;
   --spec-input-text: hsla(0, 0%, 0%, 0.87);
-  --spec-input-background: rgba(0,0,0,.04);
+  --spec-input-background: rgba(0, 0, 0, .04);
   --spec-size-text-primary: 0.875rem;
-  --spec-scroll: rgba(152, 148, 148, 0.72)
-    /* #505254 */
+  --spec-scroll: rgba(152, 148, 148, 0.72);
+  --spec-wrapper-color-dark: #1c1e21;
+  --spec-wrapper-color-light: #e9eaec;
+
+  --spec-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.24), 0 0 2px rgba(0, 0, 0, 0.12);
+  /* #505254 */
+
+  --prueba1: #201E50;
+  --prueba2: #4527a0;
+  --secondary-prueba2: #7953d2;
+  --darl: #000070;
+
 }
 
 html {
@@ -39,15 +50,11 @@ body {
   height: 100%;
 }
 
-html {
-  background-color: red;
-}
-
 *,
 *::before,
 *::after {
   margin: 0;
-  box-sizing: border-box;
+  box-sizing: border-box !important;
   padding: 0;
 }
 

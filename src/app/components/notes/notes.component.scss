@@ -1,0 +1,55 @@
+.nm-wrapper {
+  width: 100%;
+  height: auto;
+  border-bottom-left-radius: 2.4rem;
+  background-color: var(--spec-white-color);
+  padding-left: 1.5rem;
+  padding-top: 1.3rem;
+  box-shadow: var(--spec-box-shadow);
+
+  h1 {
+    color: var(--spec-text-primary);
+    font-size: 1.55rem;
+    font-weight: 500;
+  }
+
+  .nm-container {
+    padding: 25px;
+    display: flex;
+
+    .box-semi-filter {
+      border-radius: 1.5rem;
+      background-color: var(--spec-main-color);
+      color: var(--spec-white-color);
+
+      padding: 5px 14px;
+      margin-right: 8px;
+      cursor: pointer;
+    }
+  }
+}
+
+
+.content {
+  width: 100%;
+  padding: 15px;
+
+  .items {
+    width: 100%;
+
+    .item {
+      box-shadow: var(--spec-box-shadow);
+      height: 42px;
+      padding: 6px;
+      width: 100%;
+      background-color: var(--spec-white-color);
+      color: var(--spec-text-primary);
+      display: flex;
+      align-items: center;
+      font-size: .9rem;
+      border-radius: .3rem;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+  }
+}
