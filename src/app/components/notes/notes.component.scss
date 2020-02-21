@@ -32,24 +32,58 @@
 
 .content {
   width: 100%;
-  padding: 15px;
 
-  .items {
+  .progress {
+    margin-top: 40px;
+    border-bottom: 1px solid var(--spec-line-color);
+  }
+
+  .container-notes {
     width: 100%;
+    height: auto;
 
-    .item {
-      box-shadow: var(--spec-box-shadow);
-      height: 42px;
-      padding: 6px;
-      width: 100%;
-      background-color: var(--spec-white-color);
-      color: var(--spec-text-primary);
-      display: flex;
-      align-items: center;
-      font-size: .9rem;
-      border-radius: .3rem;
-      margin-bottom: 10px;
-      cursor: pointer;
+    .note-item {
+      border-bottom: 1px solid var(--spec-line-color);
+      padding: 9px 20px;
+
+      .note-title {
+        padding: 10px 0;
+
+        span {
+          color: var(--spec-text-primary);
+          font-size: 17px;
+        }
+      }
+
+      .note-content {
+        max-width: 80%;
+        padding-bottom: 18px;
+
+        span {
+          color: var(--spec-text-secondary);
+          font-size: 14px;
+        }
+      }
+
+      .note-others {
+        height: auto;
+        max-height: 24px;
+        width: 100%;
+        display: flex;
+
+        .tag {
+          border-radius: 35px;
+          background-color: var(--spec-tag-background);
+          color: var(--spec-white-color);
+          padding: 4px 14px;
+          width: auto;
+          height: 20px;
+          font-size: 11px;
+          margin-right: 10px;
+        }
+      }
     }
   }
+
+
 }
