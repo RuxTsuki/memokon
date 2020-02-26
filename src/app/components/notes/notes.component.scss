@@ -42,12 +42,31 @@
     width: 100%;
     height: auto;
 
-    .note-item {
-      border-bottom: 1px solid var(--spec-line-color);
-      padding: 9px 20px;
+    transition: all ease 2s;
 
-      .note-title {
-        padding: 10px 0;
+    .note-item {
+      position: relative;
+      margin: 17px 22px;
+      box-shadow: var(--spec-box-shadow);
+      background-color: var(--spec-white-color);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: max-height 2s ease-in;
+
+      .line-mark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 5px;
+        background-color: red;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+      }
+
+      .note-header {
+        padding: 10px 20px;
+        cursor: pointer;
 
         span {
           color: var(--spec-text-primary);
@@ -57,7 +76,12 @@
 
       .note-content {
         max-width: 80%;
-        padding-bottom: 18px;
+        padding: 0 20px 20px 20px;
+      }
+
+      .note-main {
+        width: 100%;
+        padding-bottom: 20px;
 
         span {
           color: var(--spec-text-secondary);
@@ -65,7 +89,7 @@
         }
       }
 
-      .note-others {
+      .note-footer {
         height: auto;
         max-height: 24px;
         width: 100%;

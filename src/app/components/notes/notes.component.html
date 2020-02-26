@@ -7,57 +7,61 @@
     <!-- vacio por ahora -->
   </div>
   <div class="container-notes">
+
     <div class="note-item">
-      <div class="note-title">
+      <div *ngIf="show" class="line-mark"></div>
+      <div matRipple (click)="noteToggle()" class="note-header">
         <span>Take the design propose</span>
       </div>
-      <div class="note-content">
-        <span>
-          Convetion and Exibihitions center meet with my partnerts all day.
-        </span>
-      </div>
-      <div class="note-others">
-        <div class="tag">
-          Utils
+      <div *ngIf="show" class="note-content">
+        <div class="note-main">
+          <span>
+            Convetion and Exibihitions center meet with my partnerts all day.
+          </span>
         </div>
-        <div class="tag">
-          Ux
+        <div class="note-footer">
+          <div class="tag">
+            Utils
+          </div>
+          <div class="tag">
+            Ux
+          </div>
         </div>
       </div>
     </div>
 
     <div class="note-item">
-      <div class="note-title">
+      <div class="note-header">
         <span>Take the design propose</span>
       </div>
     </div>
 
     <div class="note-item">
-      <div class="note-title">
+      <div class="note-header">
         <span>Take the design propose</span>
       </div>
     </div>
 
     <div class="note-item">
-      <div class="note-title">
+      <div class="note-header">
         <span>Take the design propose</span>
       </div>
     </div>
 
     <div class="note-item">
-      <div class="note-title">
+      <div class="note-header">
         <span>Take the design propose</span>
       </div>
     </div>
 
     <div class="note-item">
-      <div class="note-title">
+      <div class="note-header">
         <span>Take the design propose</span>
       </div>
     </div>
 
     <div class="note-item">
-      <div class="note-title">
+      <div class="note-header">
         <span>Take the design propose</span>
       </div>
     </div>
