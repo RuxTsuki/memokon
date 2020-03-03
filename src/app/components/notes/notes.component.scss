@@ -42,9 +42,8 @@
     width: 100%;
     height: auto;
 
-    transition: all ease 2s;
-
     .note-item {
+      height: 100%;
       position: relative;
       margin: 17px 22px;
       box-shadow: var(--spec-box-shadow);
@@ -67,6 +66,12 @@
       .note-header {
         padding: 10px 20px;
         cursor: pointer;
+        display: flex;
+        align-items: center;
+
+        &:hover {
+          background: rgba(0, 0, 0, .04);
+        }
 
         span {
           color: var(--spec-text-primary);
