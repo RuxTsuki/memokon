@@ -1,6 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import 'animations';
+@import 'variables';
+
 
 :root {
   --spec-white-color: #ffffff;
@@ -16,6 +18,7 @@
   --spec-scroll: rgba(152, 148, 148, 0.72);
   --spec-wrapper-color-dark: #1c1e21;
   --spec-wrapper-color-light: #e9eaec;
+  --spec-background-tertiary: #F0F0F0;
 
   --spec-tag-background: #434343;
   --spec-line-color: #BBBBBB;
@@ -27,6 +30,10 @@
   --prueba2: #4527a0;
   --secondary-prueba2: #7953d2;
   --darl: #000070;
+  // borders
+  --spec-border-radius-5: .3125rem;
+
+  // Buttons
 
 }
 
@@ -100,4 +107,16 @@ a:focus {
 
 .hidde-content {
   overflow: hidden;
+}
+
+
+.mini-fab-button-25 {
+  @extend %mini-fab-button;
+}
+
+
+.flex-center-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

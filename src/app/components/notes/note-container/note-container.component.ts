@@ -16,6 +16,9 @@ export class NoteContainerComponent {
     this.NotesGroups.changes.pipe(startWith(this.NotesGroups), switchMap(groups => {
       const headerClicks$ = groups.map(group => group.header.click$.pipe(mapTo(group)))
       return merge(...headerClicks$);
-    })).subscribe((group: NoteGroupComponent) => group.toggle());
+    })).subscribe((group: NoteGroupComponent) => {
+      console.log(group);
+      group.toggle();
+    });
   }
 }

@@ -1,0 +1,74 @@
+@import '../../../../variables';
+
+.note-card {
+  width: 166px;
+  height: 204px;
+  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12);
+  border-radius: var(--spec-border-radius-5);
+  display: grid;
+  grid-template-rows: 50% auto 40px;
+  overflow: hidden;
+}
+
+.note-header {
+  width: 100%;
+  height: 100%;
+
+  .img-container {
+    background-image: url('https://res.cloudinary.com/daily-now/image/upload/f_auto,q_auto/v1/posts/3d979d994c16dd2463f714ef89b8bb4d');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.note-main {
+  background-color: var(--spec-background-tertiary);
+  height: 100%;
+  position: relative;
+
+  &::before {
+    content: '';
+    width: 100%;
+    height: 10px;
+    background-color: var(--spec-background-tertiary);
+    position: absolute;
+    top: -9px;
+    left: 0;
+    border-top-left-radius: var(--spec-border-radius-5);
+    border-top-right-radius: var(--spec-border-radius-5);
+  }
+
+  .note-tile {}
+
+  .note-tags {}
+}
+
+.note-footer {
+  background-color: var(--spec-wrapper-color-light);
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 1fr;
+
+  >div {
+    @extend %flex-center-center;
+  }
+
+  button {
+    @extend %mini-fab-button;
+  }
+
+  i {
+    font-size: 20px;
+  }
+
+  .note-type {}
+
+  .note-time {}
+
+  .note-mark {}
+
+  .note-options {}
+}

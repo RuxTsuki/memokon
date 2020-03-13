@@ -1,0 +1,21 @@
+// Buttons ------------------------
+%mini-fab-button {
+  padding: 0;
+  width: 26px;
+  height: 26px;
+  min-width: 26px;
+  display: flex;
+  border-radius: 50%;
+  line-height: normal;
+  justify-content: center;
+  align-items: center;
+}
+
+// Buttons---------------------------------
+
+// Aligns ---------------\
+%flex-center-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

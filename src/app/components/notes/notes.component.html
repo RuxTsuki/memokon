@@ -7,40 +7,52 @@
     <!-- vacio por ahora -->
   </div>
   <div class="container-notes">
-
-    <app-note-container>
-      <app-note-group #group *ngFor="let section of sections">
-        <div [@openClose]="header.isOpen ? 'true' : 'false'" class="note-item">
-          <div *ngIf="header.isOpen" class="line-mark"></div>
-          <app-note-header #header>
-            <div tabindex="0" class="note-header">
-              <span>Take the design propose</span>
-              <i class="material-icons"> {{ header.isOpen ? 'remove_circle_outline' : 'check_circle_outline'}} </i>
-            </div>
-          </app-note-header>
-          <app-note-content #content>
-            <ng-template [ngIf]="header.isOpen">
-              <div @beforeClose class="note-content">
-                <div class="note-main">
-                  <span>
-                    Convetion and Exibihitions center meet with my partnerts all day.
-                  </span>
-                </div>
-                <div class="note-footer">
-                  <div class="tag">
-                    Utils
-                  </div>
-                  <div class="tag">
-                    Ux
-                  </div>
-                </div>
-                <app-note-test></app-note-test>
-              </div>
-            </ng-template>
-          </app-note-content>
-        </div>
-      </app-note-group>
-    </app-note-container>
-
+    <ng-template *ngIf="filterView==='list'; then tListNotes else tCardsNotes">
+    </ng-template>
   </div>
+
 </div>
+
+
+
+<ng-template #tListNotes>
+  <app-note-container>
+    <app-note-group #group *ngFor="let section of sections">
+      <div [@openClose]="header.isOpen ? 'true' : 'false'" class="note-item">
+        <div *ngIf="header.isOpen" class="line-mark"></div>
+        <app-note-header #header>
+          <div tabindex="0" class="note-header">
+            <span>Take the design propose</span>
+            <i class="material-icons"> {{ header.isOpen ? 'remove_circle_outline' : 'check_circle_outline'}} </i>
+          </div>
+        </app-note-header>
+        <app-note-content #content>
+          <ng-template [ngIf]="header.isOpen">
+            <div @beforeClose class="note-content">
+              <div class="note-main">
+                <span>
+                  Convetion and Exibihitions center meet with my partnerts all day.
+                </span>
+              </div>
+              <div class="note-footer">
+                <div class="tag">
+                  Utils
+                </div>
+                <div class="tag">
+                  Ux
+                </div>
+              </div>
+              <app-note-test></app-note-test>
+            </div>
+          </ng-template>
+        </app-note-content>
+      </div>
+    </app-note-group>
+  </app-note-container>
+</ng-template>
+
+<ng-template #tCardsNotes>
+  <div class="cards-container">
+    <app-note-card></app-note-card>
+  </div>
+</ng-template>

@@ -12,15 +12,19 @@ import { map } from 'rxjs/operators';
 export class NoteHeaderComponent {
 
   clicks$ = fromEvent(this.host.nativeElement, 'click');
-  keyDown$ = fromEvent(this.host.nativeElement, 'keydown').pipe(map((event: KeyboardEvent) => event.keyCode === 32 || event.keyCode == 13 ? event : null));
-  click$ = merge(this.clicks$, this.keyDown$);
+  keyDown$ = fromEvent(this.host.nativeElement, 'keydown');
+  click$ = merge(this.clicks$, this.keyDown$.pipe(map((event: KeyboardEvent) => event.keyCode === 32 || event.keyCode == 13)));
+
   _isOpen = false;
+
+  //.pipe(map((event: KeyboardEvent) => event.keyCode === 32 || event.keyCode == 13 ? null : null)) ? this.keyDown$ : null)
 
   constructor(private host: ElementRef, private cdr: ChangeDetectorRef) { }
   /** para estilos */
   @Input() @HostBinding('class.accordion-open')
 
   set isOpen(value: boolean) {
+    console.log(this.keyDown$);
     if (this.isOpen !== value) {
       this._isOpen = value;
       this.cdr.markForCheck();

@@ -7,6 +7,7 @@ import {
   transition,
   // ...
 } from '@angular/animations';
+import { Filterview } from './notes.interface';
 
 @Component({
   selector: 'app-notes',
@@ -28,6 +29,7 @@ export class NotesComponent implements OnInit {
 
 
   sections = ['', '', '']
+  filterView: Filterview = 'cards'
 
   show = false;
 
