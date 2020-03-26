@@ -1,9 +1,11 @@
 import { Component, OnInit, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
-import { IMenuItems, IAsideSections, ISearchFilters } from './my-zone.interface';
+import { IMenuItems, IAsideSections, ISearchFilters, IAsideItems } from './my-zone.interface';
 import { MatSidenav } from '@angular/material/sidenav';
-import { asideItems } from "./aside-items";
+import { asideSections, asideItems } from "./aside-items";
 import { SEARCH_FILTERS } from "./search-filters";
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
+import { ThemingService } from 'src/app/theme/theming.service';
 
 @Component({
   selector: 'app-my-zone',
@@ -34,10 +36,20 @@ export class MyZoneComponent implements OnInit, AfterViewInit {
   searchBar = false;
   searchBarM = false;
   lastItem: string;
+  nameLastItem: string = '';
 
-  readonly asideSections: IAsideSections[] = asideItems;
+  _darkTheme = false;
 
-  constructor(private router: Router) { }
+
+  asideSections: IAsideSections[] = asideSections;
+
+  constructor(private router: Router, private themeS: ThemingService) {
+    this.router.events.subscribe((c: NavigationEnd) => {
+      if (c && c.url !== '/') {
+        this.setNameActive(c?.url, 'url');
+      }
+    })
+  }
 
   ngOnInit() {
     this.onResizeWindow();
@@ -89,6 +101,7 @@ export class MyZoneComponent implements OnInit, AfterViewInit {
     this.searchBar = this.searchBarM = false;
     this.asideSelection(itemCode);
     this.sidenav.toggle();
+    this.itemActive(itemCode);
   }
 
   /* Redirije a una ruta hija dependiendo del itemcode */
@@ -96,7 +109,7 @@ export class MyZoneComponent implements OnInit, AfterViewInit {
     switch (itemCode) {
       case '3d':
         this.saveLastAsideItem(itemCode);
-        this.router.navigateByUrl('docs/new');
+        this.router.navigateByUrl('docs');
         break;
       case '3nm':
         this.saveLastAsideItem(itemCode);
@@ -112,10 +125,45 @@ export class MyZoneComponent implements OnInit, AfterViewInit {
   }
 
   /** Guarda el codigo del ultimo asideItem clickeado */
-  saveLastAsideItem = (item: string) => this.lastItem = item;
+  saveLastAsideItem = (item: string) => {
+    this.setNameActive(item, 'code');
+    this.lastItem = item
+  };
 
   /** Al quitar la busqueda vuelve al ultimo AsideItem Selecionado */
   setLastAsideItem = () => this.asideSelection(this.lastItem)
+
+  /** titulo en mobile dependiendo de la ruta o item seleccionado */
+  setNameActive = (codeSearch: string, opts: string) => {
+    if (!codeSearch) {
+      return;
+    }
+    switch (opts) {
+      case 'url':
+        const itemActive = asideItems.find(c => c.urlName === codeSearch);
+        this.nameLastItem = itemActive?.name;
+        this.itemActive(itemActive.itemCode);
+        break;
+      case 'code':
+        this.nameLastItem = asideItems.find(c => c.itemCode === codeSearch)?.name;
+        break;
+      default:
+        break;
+    }
+
+  }
+
+  itemActive(itemCode: string) {
+    if (!itemCode) {
+      return;
+    }
+    this.asideSections.forEach(section => {
+      section.items.forEach(item => {
+        item.state ? item.state = false : null;
+        item.itemCode === itemCode ? item.state = true : null;
+      })
+    })
+  }
 
   /** Intercambia la accion del icono Search por buscar o cancelar busqueda y se redirige a la url search */
   onToggleSearch = () => {
@@ -144,6 +192,11 @@ export class MyZoneComponent implements OnInit, AfterViewInit {
   openAside = () => {
     document.querySelector('mat-sidenav-container').classList.add('show-aside');
     document.body.style.overflow = 'hidden';
+  }
+
+  toggleTheme() {
+    this._darkTheme = !this._darkTheme;
+    this._darkTheme ? this.themeS.setDarkTheme() : this.themeS.setLightTheme();
   }
 
   /** si la resolucion es Menor a 660 */

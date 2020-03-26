@@ -1,7 +1,7 @@
 
-import { IAsideSections } from "./my-zone.interface";
+import { IAsideSections, IAsideItems } from "./my-zone.interface";
 
-export const asideItems: IAsideSections[] = [
+export const asideSections: IAsideSections[] = [
   {
     title: 'Workspace',
     code: '3',
@@ -86,3 +86,24 @@ export const asideItems: IAsideSections[] = [
     }]
   }
 ]
+
+
+export const asideItems: IAsideItems[] = [{
+  name: 'Notes / Memos',
+  iconName: 'format_list_bulleted',
+  tooltip: 'Create or list my recordatories',
+  itemCode: '3nm',
+  urlName: '/notes'
+}, {
+  name: 'Tasks',
+  iconName: 'list_alt',
+  tooltip: 'Create or list my tasks',
+  itemCode: '3dl',
+  urlName: '/tasks'
+}, {
+  name: 'Docs',
+  iconName: 'library_add',
+  tooltip: 'Create or list my documents',
+  itemCode: '3d',
+  urlName: '/docs'
+}]

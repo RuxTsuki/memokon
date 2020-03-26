@@ -5,26 +5,42 @@
 
 
 :root {
-  --spec-white-color: #ffffff;
+  //backgrounds
+  --spec-wrapper-primary: #fff;
+  --spec-wrapper-secondary: #e9eaec;
+
+
+  // texto
+  --spec-text-primary: #030303;
+  --spec-text-secondary: #030303;
+  --spec-text-static-gray: #a9abb3;
+  // texto como titulo
+  --spec-text-tertiary: #606060;
+
+  // icons
+  --spec-icon-primary: #606060;
+
+
   --secondary-color: #f9f9f9;
   --icons-color: #6C7B8A;
   --spec-10-percent-layer: rgba(0, 0, 0, 0.10);
-  --spec-text-secondary: #606060;
   --spec-main-color: #07ADA8;
-  --spec-text-primary: #0d0d0d;
   --spec-input-text: hsla(0, 0%, 0%, 0.87);
   --spec-input-background: rgba(0, 0, 0, .04);
   --spec-size-text-primary: 0.875rem;
   --spec-scroll: rgba(152, 148, 148, 0.72);
   --spec-wrapper-color-dark: #1c1e21;
-  --spec-wrapper-color-light: #e9eaec;
-  --spec-background-tertiary: #F0F0F0;
+
+  --spec-background-tertiary: #e9eaec;
 
   --spec-tag-background: #434343;
   --spec-line-color: #BBBBBB;
 
   --spec-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.24), 0 0 2px rgba(0, 0, 0, 0.12);
+  --spec-box-shadow-card: 0px 2px 15px 3px #00000020;
   /* #505254 */
+
+  --spec-secondary-color: #fff;
 
   --prueba1: #201E50;
   --prueba2: #4527a0;

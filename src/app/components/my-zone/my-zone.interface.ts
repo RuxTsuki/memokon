@@ -13,6 +13,7 @@ export interface IAsideItems {
   iconName?: string;
   tooltip?: string;
   itemCode?: string;
+  urlName?: string;
 }
 /* Secciones del aside menu */
 export interface IAsideSections {

@@ -1,19 +1,13 @@
-<div class="nm-wrapper">
-  <h1>Notes & Memos</h1>
-  <div class="nm-container"></div>
-</div>
+<div class="nm-wrapper"></div>
 <div class="content">
   <div class="progress">
     <!-- vacio por ahora -->
   </div>
   <div class="container-notes">
-    <ng-template *ngIf="filterView==='list'; then tListNotes else tCardsNotes">
+    <ng-template *ngIf="filterView === 'list'; then tListNotes; else tCardsNotes">
     </ng-template>
   </div>
-
 </div>
-
-
 
 <ng-template #tListNotes>
   <app-note-container>
@@ -23,7 +17,9 @@
         <app-note-header #header>
           <div tabindex="0" class="note-header">
             <span>Take the design propose</span>
-            <i class="material-icons"> {{ header.isOpen ? 'remove_circle_outline' : 'check_circle_outline'}} </i>
+            <i class="material-icons">
+              {{ header.isOpen ? "remove_circle_outline" : "check_circle_outline" }}
+            </i>
           </div>
         </app-note-header>
         <app-note-content #content>
@@ -31,7 +27,8 @@
             <div @beforeClose class="note-content">
               <div class="note-main">
                 <span>
-                  Convetion and Exibihitions center meet with my partnerts all day.
+                  Convetion and Exibihitions center meet with my partnerts all
+                  day.
                 </span>
               </div>
               <div class="note-footer">

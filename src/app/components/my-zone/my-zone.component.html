@@ -1,6 +1,6 @@
 <div class="wrapper">
 
-  <nav class="navbar" [ngClass]="{'navbar-searchbarM': searchBarM}">
+  <nav class="navbar-top" [ngClass]="{'navbar-searchbarM': searchBarM}">
     <button mat-icon-button (click)="onToggleAside()">
       <i class="material-icons">menu</i>
     </button>
@@ -42,8 +42,8 @@
         <div class="aside-main">
           <div *ngFor="let asideSection of asideSections" class="aside-sections">
             <h3> {{ asideSection.title }} </h3>
-            <div (click)="asideClick(section.itemCode)" matRipple *ngFor="let section of asideSection.items"
-              class="aside-items">
+            <div [ngClass]="{'aside-item-active': section?.state }" (click)="asideClick(section.itemCode)" matRipple
+              *ngFor="let section of asideSection.items" class="aside-items">
               <div class="aside-section">
                 <i class="material-icons"> {{ section.iconName }} </i>
                 <span> {{ section.name }} </span>
@@ -76,6 +76,7 @@
 
   <footer class="footer">
     Aca mi footer
+    <mat-slide-toggle (toggleChange)="toggleTheme()">Dark Mode</mat-slide-toggle>
   </footer>
 </div>
 
@@ -89,9 +90,9 @@
 
 
 <ng-template #menuItemsTemplate>
-  <a class="main-title" href="#">
-    MEMOKON
-  </a>
+  <span class="main-title">
+    {{ isMobile() ?  nameLastItem ? nameLastItem : 'MEMOKON' : 'MEMOKON'}}
+  </span>
   <ul>
     <div class="container-menu-items" *ngIf="!searchBar; else searchBarTemplate">
       <li [ngClass]="{'item-active': itemNav.state, 'dont-show': itemNav.onTopMenu === false}"

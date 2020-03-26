@@ -2,17 +2,17 @@
 
 .note-card {
   width: 166px;
-  height: 204px;
+  height: auto;
   box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12);
   border-radius: var(--spec-border-radius-5);
   display: grid;
-  grid-template-rows: 50% auto 40px;
+  grid-template-rows: repeat(3, auto);
   overflow: hidden;
 }
 
 .note-header {
   width: 100%;
-  height: 100%;
+  height: 85px;
 
   .img-container {
     background-image: url('https://res.cloudinary.com/daily-now/image/upload/f_auto,q_auto/v1/posts/3d979d994c16dd2463f714ef89b8bb4d');
@@ -25,15 +25,16 @@
 }
 
 .note-main {
-  background-color: var(--spec-background-tertiary);
-  height: 100%;
+  background-color: var(--spec-wrapper-primary);
+  height: auto;
   position: relative;
+  box-shadow: var(--spec-box-shadow-card);
 
   &::before {
     content: '';
     width: 100%;
     height: 10px;
-    background-color: var(--spec-background-tertiary);
+    background-color: inherit;
     position: absolute;
     top: -9px;
     left: 0;
@@ -41,14 +42,23 @@
     border-top-right-radius: var(--spec-border-radius-5);
   }
 
-  .note-tile {}
+  .note-tile {
+    padding: 10px 15px;
+    text-align: center;
+    max-height: 90px;
+    min-height: 60px;
+  }
 
-  .note-tags {}
+  span {
+    color: var(--spec-text-primary);
+    font-size: 0.9rem;
+  }
+
 }
 
 .note-footer {
-  background-color: var(--spec-wrapper-color-light);
-  height: 100%;
+  background-color: var(--spec-wrapper-primary);
+  height: 40px;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr 1fr;
 
@@ -62,6 +72,12 @@
 
   i {
     font-size: 20px;
+    color: var(--spec-icon-primary);
+  }
+
+  span {
+    color: var(--spec-text-static-gray);
+    font-size: .8rem;
   }
 
   .note-type {}

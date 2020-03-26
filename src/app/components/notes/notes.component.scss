@@ -1,32 +1,6 @@
 .nm-wrapper {
   width: 100%;
   height: auto;
-  border-bottom-left-radius: 2.4rem;
-  background-color: var(--spec-white-color);
-  padding-left: 1.5rem;
-  padding-top: 1.3rem;
-  box-shadow: var(--spec-box-shadow);
-
-  h1 {
-    color: var(--spec-text-primary);
-    font-size: 1.55rem;
-    font-weight: 500;
-  }
-
-  .nm-container {
-    padding: 25px;
-    display: flex;
-
-    .box-semi-filter {
-      border-radius: 1.5rem;
-      background-color: var(--spec-main-color);
-      color: var(--spec-white-color);
-
-      padding: 5px 14px;
-      margin-right: 8px;
-      cursor: pointer;
-    }
-  }
 }
 
 
@@ -47,7 +21,7 @@
       position: relative;
       margin: 17px 22px;
       box-shadow: var(--spec-box-shadow);
-      background-color: var(--spec-white-color);
+      background-color: var(--spec-wrapper-primary);
       border-radius: 10px;
       overflow: hidden;
       transition: max-height 2s ease-in;
@@ -103,7 +77,7 @@
         .tag {
           border-radius: 35px;
           background-color: var(--spec-tag-background);
-          color: var(--spec-white-color);
+          color: var(--spec-wrapper-primary);
           padding: 4px 14px;
           width: auto;
           height: 20px;
