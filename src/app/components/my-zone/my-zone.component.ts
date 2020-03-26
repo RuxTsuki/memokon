@@ -135,7 +135,7 @@ export class MyZoneComponent implements OnInit, AfterViewInit {
 
   /** titulo en mobile dependiendo de la ruta o item seleccionado */
   setNameActive = (codeSearch: string, opts: string) => {
-    if (!codeSearch) {
+    if (!codeSearch || codeSearch === '/search') {
       return;
     }
     switch (opts) {
