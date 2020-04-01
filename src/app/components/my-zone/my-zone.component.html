@@ -1,66 +1,25 @@
 <div class="wrapper">
 
-  <nav class="navbar-top" [ngClass]="{'navbar-searchbarM': searchBarM}">
-    <button mat-icon-button (click)="onToggleAside()">
+  <nav class="navbar-top">
+    <button mat-icon-button (click)="cAsideNav.onToggleAside()">
       <i class="material-icons">menu</i>
     </button>
 
-    <ng-template #name *ngIf="!searchBarM; then menuItemsTemplate else searchBarTemplate">
+    <ng-template #name *ngIf="searchBar && isMobile(); then searchBarTemplate else menuItemsTemplate">
     </ng-template>
 
     <button (click)="onToggleSearch()" mat-icon-button>
-      <i *ngIf="!searchBarM && !searchBar" class="material-icons">search</i>
-      <i *ngIf="searchBarM || searchBar" class="material-icons">clear</i>
+      <i *ngIf="!searchBar" class="material-icons">search</i>
+      <i *ngIf="searchBar" class="material-icons">clear</i>
     </button>
   </nav>
 
-  <mat-sidenav-container class="aside-nav-container">
-    <mat-sidenav class="b-scroll" #sidenav mode="over" (opened)="openAside()" (closed)="closeAside()"
-      [fixedBottomGap]="0">
-      <div class="aside-container">
-        <div class="aside-header">
-          <div class="aside-return">
-            <button (click)="sidenav.toggle()" mat-icon-button>
-              <i class="material-icons">close</i>
-            </button>
-          </div>
-          <div class="aside-image">
-            <div class="gb">
-              <div matRipple class="profile-image">
-              </div>
-              <div class="add-image">
-                <a [matTooltip]="'Change Photo'" matRipple href="#">
-                  <i class="material-icons">
-                    photo_camera
-                  </i>
-                </a>
-              </div>
-            </div>
-            <span>SaiHadou</span>
-          </div>
-        </div>
-        <div class="aside-main">
-          <div *ngFor="let asideSection of asideSections" class="aside-sections">
-            <h3> {{ asideSection.title }} </h3>
-            <div [ngClass]="{'aside-item-active': section?.state }" (click)="asideClick(section.itemCode)" matRipple
-              *ngFor="let section of asideSection.items" class="aside-items">
-              <div class="aside-section">
-                <i class="material-icons"> {{ section.iconName }} </i>
-                <span> {{ section.name }} </span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div matRipple class="aside-footer">
-          <i class="material-icons">exit_to_app</i>
-          <span> Logout </span>
-        </div>
-      </div>
-    </mat-sidenav>
-  </mat-sidenav-container>
+  <aside>
+    <app-aside-nav #cAsideNav (searchBar)="searchBar=$event"></app-aside-nav>
+  </aside>
 
   <main class="main">
-    <div *ngIf="searchBarM || searchBar;">
+    <div *ngIf="searchBar;">
       <div class="">
         <div class="">
           Aca van los filtros
@@ -75,34 +34,32 @@
   </main>
 
   <footer class="footer">
-    Aca mi footer
-    <mat-slide-toggle (toggleChange)="toggleTheme()">Dark Mode</mat-slide-toggle>
+    <app-footer></app-footer>
   </footer>
 </div>
 
-
+<!-- barra de busqueda completa para mobile -->
 <ng-template #searchBarTemplate>
   <div class="search-bar">
-    <app-search-bar [searchFiltered]="searchFiltered" [onFocus]="searchBar || searchBarM ? true : false">
+    <app-search-bar [searchFiltered]="searchFiltered" [onFocus]="searchBar ? true : false">
     </app-search-bar>
   </div>
 </ng-template>
 
-
+<!-- items con barra de busqueda para desktop -->
 <ng-template #menuItemsTemplate>
   <span class="main-title">
-    {{ isMobile() ?  nameLastItem ? nameLastItem : 'MEMOKON' : 'MEMOKON'}}
+    {{ isMobile() ?   myZoneS._nameLastItem ? myZoneS._nameLastItem : 'MEMOKON' : 'MEMOKON'}}
   </span>
   <ul>
     <div class="container-menu-items" *ngIf="!searchBar; else searchBarTemplate">
       <li [ngClass]="{'item-active': itemNav.state, 'dont-show': itemNav.onTopMenu === false}"
         *ngFor="let itemNav of itemsNav">
-        <button (click)="ItemSelected(itemNav)" mat-button>
+        <button (click)="itemTopSelected(itemNav)" mat-button>
           <a href="#"> {{ itemNav.name }} </a>
         </button>
       </li>
-      <div class="line-nav">
-      </div>
+      <div class="line-nav"></div>
     </div>
   </ul>
 </ng-template>

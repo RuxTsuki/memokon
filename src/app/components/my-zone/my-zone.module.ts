@@ -14,10 +14,13 @@ import { NewDocsModule } from '../docs/new-docs/new-docs.module';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { InputModule } from '../utils/input/input.module';
 import { NotesModule } from '../notes/notes.module';
+import { AsideNavComponent } from './aside-nav/aside-nav.component';
+import { FooterModule } from '../footer/footer.module';
 @NgModule({
   declarations: [
     MyZoneComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    AsideNavComponent
   ],
   imports: [
     CommonModule,
@@ -25,14 +28,14 @@ import { NotesModule } from '../notes/notes.module';
     MatIconModule,
     MatButtonModule,
     MatTooltipModule,
-    MatTooltipModule,
     MatSidenavModule,
     MatInputModule,
     MatRippleModule,
     NewDocsModule,
     InputModule,
     NotesModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    FooterModule
   ]
 })
 export class MyZoneModule { }

@@ -106,4 +106,10 @@ export const asideItems: IAsideItems[] = [{
   tooltip: 'Create or list my documents',
   itemCode: '3d',
   urlName: '/docs'
+},{
+  name: 'Search',
+  iconName: 'search',
+  tooltip: 'Search your task, Docs and more...',
+  itemCode: '4s',
+  urlName: '/search'
 }]

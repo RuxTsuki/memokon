@@ -12,6 +12,7 @@ export const lightTheme: ITheme = {
 
     "--spec-text-primary": '#030303',
     "--spec-text-secondary": '#030303',
+    "--spec-text-footer": '#e9eaec',
     "--spec-text-tertiary": '#606060',
 
     "--spec-icon-primary": '#606060'
@@ -28,6 +29,7 @@ export const darkTheme: ITheme = {
 
     "--spec-text-primary": '#fff',
     "--spec-text-secondary": '#a9abb3',
+    "--spec-text-footer": '#a9abb3',
     "--spec-text-tertiary": '#a7a9b1',
 
     "--spec-icon-primary": '#a9abb3'

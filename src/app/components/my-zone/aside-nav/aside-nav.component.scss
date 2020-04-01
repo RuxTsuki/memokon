@@ -1,0 +1,204 @@
+.aside-nav-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  flex: 1 0 auto;
+  background-color: transparent;
+}
+
+mat-sidenav {
+  width: 260px;
+  height: 100%;
+  background-color: var(--spec-wrapper-primary);
+
+  ::ng-deep .mat-drawer-inner-container {
+    scroll-behavior: smooth;
+  }
+}
+
+.show-aside {
+  right: 0;
+  z-index: 55;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
+
+.aside-container {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 200px 1fr 50px;
+
+  i {
+    margin-right: 22px;
+    color: var(--spec-icon-primary);
+  }
+
+  .aside-header {
+    height: 100%;
+    width: 100%;
+
+    i {
+      margin: 0;
+
+      &:hover {
+        color: var(--spec-text-primary);
+      }
+    }
+
+    .aside-return {
+      height: 50px;
+      padding-left: 10px;
+      display: flex;
+      align-items: center;
+    }
+
+    .aside-image {
+      height: 150px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .gb {
+        width: 86px;
+        height: 86px;
+        position: relative;
+      }
+
+      .profile-image {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background-image: url("../../../../assets/img/paper.jpg");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .add-image {
+        position: absolute;
+        background-color: var(--spec-wrapper-primary);
+        border-radius: 50%;
+        bottom: 0;
+        right: 0;
+        width: auto;
+        height: auto;
+        width: 32px;
+        height: 32px;
+
+        a {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          width: 26px;
+          height: 26px;
+          margin: 0 2.5px 3px;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: white;
+          box-shadow: 0 1px 1px 0 rgba(65, 69, 73, 0.3), 0 1px 3px 1px rgba(65, 69, 73, 0.15);
+        }
+
+        i {
+          font-size: 20px;
+          color: var(--spec-main-color);
+        }
+      }
+
+      span {
+        margin-top: 15px;
+        font-size: .96rem;
+        font-weight: 500;
+        color: var(--spec-text-primary);
+      }
+    }
+  }
+
+  .aside-main {
+    padding-top: 10px;
+
+    .aside-sections {
+      border-top: 1px solid var(--spec-10-percent-layer);
+      padding: 20px 0;
+
+      h3 {
+        color: var(--spec-text-tertiary);
+        font-weight: 400;
+        font-size: var(--spec-size-text-primary);
+        text-transform: uppercase;
+        font-weight: 500;
+        padding: 0 20px 8px 20px;
+      }
+
+      .aside-items {
+        height: 40px;
+        cursor: pointer;
+
+        .aside-section {
+          padding: 0 20px;
+          height: 100%;
+          display: flex;
+          align-self: center;
+          align-items: center;
+        }
+
+        span {
+          color: var(--spec-text-secondary);
+          font-weight: 400;
+          font-size: var(--spec-size-text-primary);
+          overflow: hidden;
+        }
+
+      }
+
+      .aside-item-active {
+        background-color: var(--spec-10-percent-layer);
+
+        span {
+          color: var(--spec-text-primary);
+        }
+
+        i {
+          color: var(--spec-text-primary);
+        }
+      }
+    }
+  }
+
+  .aside-footer {
+    border-top: 1px solid var(--spec-10-percent-layer);
+    height: 100%;
+    padding: 0 20px;
+    display: flex;
+    align-self: center;
+    align-items: center;
+    cursor: pointer;
+
+
+
+    span {
+      color: var(--spec-text-secondary);
+      font-weight: 400;
+      font-size: var(--spec-size-text-primary);
+      overflow: hidden;
+    }
+  }
+
+  .aside-footer:hover,
+  .aside-main .aside-sections .aside-items:hover {
+    background-color: var(--spec-10-percent-layer);
+
+    span {
+      color: var(--spec-text-primary);
+    }
+
+    i {
+      color: var(--spec-text-primary);
+    }
+  }
+}

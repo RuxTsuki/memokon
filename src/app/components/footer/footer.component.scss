@@ -1,0 +1,74 @@
+.wrapper-footer {
+  width: 100%;
+}
+
+.f-1,
+.f-2,
+.f-c {
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  @media screen and (min-width: 660px) {
+    flex-wrap: nowrap;
+  }
+}
+
+.f-1 {
+  padding-top: 15px;
+  background-color: #242729;
+}
+
+.f-2 {
+  background-color: #242729;
+}
+
+.f-c {
+  width: 550px;
+  margin: 0 auto;
+  position: relative;
+
+  .f-item {
+    width: 50%;
+    min-width: 100px;
+    padding: 8px;
+    text-align: center;
+    color: var(--spec-text-footer);
+    font-size: .85rem;
+
+    &:hover {
+      color: white;
+    }
+
+  }
+
+  .f-item:not(.switch) {
+    cursor: pointer;
+  }
+
+  @media screen and (min-width: 660px) {
+    width: 1200px;
+
+    .f-item {
+      width: 100%;
+      max-width: 150px;
+      font-size: 1rem;
+    }
+  }
+}
+
+.logo {
+  position: absolute;
+  top: 20px;
+  left: -60px;
+  color: red;
+}
+
+/*
+
+
+        TERMINAR EL FOOTER y el navbar top estilos y demas
+
+
+ */
